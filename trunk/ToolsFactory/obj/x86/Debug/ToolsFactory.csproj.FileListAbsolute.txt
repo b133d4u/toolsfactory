@@ -1,0 +1,23 @@
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\bin\Debug\ToolsFactory.dll.config
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\bin\Debug\ToolsFactory.dll
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\bin\Debug\ToolsFactory.pdb
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.dll
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.pdb
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.formAbout.resources
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.csproj.GenerateResource.Cache
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.dll
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.pdb
+E:\ToolsFactory\ToolsFactory\bin\Debug\ToolsFactory.dll.config
+E:\ToolsFactory\ToolsFactory\bin\Debug\ToolsFactory.dll
+E:\ToolsFactory\ToolsFactory\bin\Debug\ToolsFactory.pdb
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.Properties.Resources.resources
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.formAbout.resources
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.Properties.Resources.resources
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.NumericUpDownEx.resources
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.NumericUpDownEx.resources
+E:\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.formUpdate.resources
+D:\Documenti\ROM Hacking\ToolsFactory\ToolsFactory\obj\x86\Debug\ToolsFactory.formUpdate.resources

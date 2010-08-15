@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8906AE1-BF9D-46C1-8D4D-7AEE1E0BDB41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FreeSpaceFinder</RootNamespace>
+    <AssemblyName>FreeSpaceFinder</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fsf_form.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ToolsFactory\Classes\AssemblyHelper.cs">
+      <Link>Common\Classes\AssemblyHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\Crc.cs">
+      <Link>Common\Classes\Crc.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\ExceptionHandler.cs">
+      <Link>Common\Classes\ExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\Extensions.cs">
+      <Link>Common\Classes\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\FontHelper.cs">
+      <Link>Common\Classes\FontHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\FreeSpaceHelper.cs">
+      <Link>Common\Classes\FreeSpaceHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\GameManager.cs">
+      <Link>Common\Classes\GameManager.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\HttpHelper.cs">
+      <Link>Common\Classes\HttpHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\Localization.cs">
+      <Link>Common\Classes\Localization.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\MessageBoxHelper.cs">
+      <Link>Common\Classes\MessageBoxHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\SettingsBase.cs">
+      <Link>Common\Classes\SettingsBase.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\StructureHelper.cs">
+      <Link>Common\Classes\StructureHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\UpdateHelper.cs">
+      <Link>Common\Classes\UpdateHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\Urls.cs">
+      <Link>Common\Classes\Urls.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Classes\ZipHelper.cs">
+      <Link>Common\Classes\ZipHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Controls\NumericUpDownEx.cs">
+      <Link>Common\Controls\NumericUpDownEx.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Controls\TextBoxEx.cs">
+      <Link>Common\Controls\TextBoxEx.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Forms\formAbout.cs">
+      <Link>Common\Forms\formAbout.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Forms\formAbout.designer.cs">
+      <Link>Common\Forms\formAbout.designer.cs</Link>
+      <DependentUpon>formAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Forms\formUpdate.cs">
+      <Link>Common\Forms\formUpdate.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\ToolsFactory\Forms\formUpdate.designer.cs">
+      <Link>Common\Forms\formUpdate.designer.cs</Link>
+      <DependentUpon>formUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMain.Designer.cs">
+      <DependentUpon>formMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="..\ToolsFactory\Forms\formAbout.resx">
+      <Link>Common\Forms\formAbout.resx</Link>
+      <DependentUpon>formAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ToolsFactory\Forms\formUpdate.resx">
+      <Link>Common\Forms\formUpdate.resx</Link>
+      <DependentUpon>formUpdate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMain.resx">
+      <DependentUpon>formMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToolsFactory\gpl-3.0.txt">
+      <Link>gpl-3.0.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FreeSpaceFinder.Languages.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fsf_form.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

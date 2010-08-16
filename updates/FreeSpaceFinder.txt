@@ -1,1 +1,1 @@
-2.0.0.0;http://toolsfactory.googlecode.com/files/FreeSpaceFinder-1.1.0.0.zip
+2.0.1.0;http://toolsfactory.googlecode.com/files/FreeSpaceFinder-2.0.1.0.zip

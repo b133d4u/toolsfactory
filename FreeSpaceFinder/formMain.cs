@@ -1,6 +1,6 @@
 ﻿// Free Space Finder
 
-// Whether you're scripting or replacing some images, this tools 
+// Whether you're scripting or replacing some images, this tool 
 // helps you finding free space inside your ROMs.
 
 // Copyright (C) 2010  HackMew

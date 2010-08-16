@@ -155,7 +155,6 @@ namespace FreeSpaceFinder
 
             if (!findNext)
             {
-                Clear();
                 startOffset = rbtnSearchFromBeginning.Checked ? 0 : (int)tbxOffset.Value;
             }
             else
@@ -169,10 +168,15 @@ namespace FreeSpaceFinder
             try
             {
                 result = FreeSpaceHelper.Search(GameManager.FileName, startOffset, (int)nudNeededBytes.Value);
+                
+                if (!findNext)
+                    Clear();
             }
             catch (Exception ex)
             {
+                ExceptionHandler.LogException(ex);
                 ExceptionHandler.ShowMessage(ex);
+                return;
             }
 
             if (result != -1)
@@ -219,6 +223,18 @@ namespace FreeSpaceFinder
         private void Copy()
         {
             Clipboard.SetText(lbxResults.SelectedItem.ToString());
+        }
+
+        private void Disable()
+        {
+            miFind.Enabled = false;
+
+            btnFind.Enabled = false;
+            btnFind.Update();
+
+            rbtnSearchFromBeginning.Enabled = false;
+            rbtnSearchFromOffset.Enabled = false;
+            tbxOffset.Enabled = false;
         }
 
         private void Clear()
@@ -271,46 +287,60 @@ namespace FreeSpaceFinder
                 return;
 
             GameManager.FileName = fileName;
-
             string gameCode = String.Empty;
 
-            if (GameManager.IsGameBoyAdvance())
+            try
             {
-                gameCode =
-                    GameManager.ReadHeader<GameManager.GbaGameHeader>().GameCode.GetString();
-            }
-            else
-            {
-                if (GameManager.IsGameBoyColor())
+                if (GameManager.IsGameBoyAdvance())
                 {
                     gameCode =
-                        GameManager.ReadHeader<GameManager.GbcGameHeader>().GameTitle.GetString();
-                }
-                else if (GameManager.IsSuperGameBoy())
-                {
-                    gameCode =
-                        GameManager.ReadHeader<GameManager.SgbGameHeader>().GameTitle.GetString();
+                        GameManager.ReadHeader<GameManager.GbaGameHeader>().GameCode.GetString();
                 }
                 else
                 {
-                    gameCode =
-                        GameManager.ReadHeader<GameManager.GbGameHeader>().GameTitle.GetString();
+                    if (GameManager.IsGameBoyColor())
+                    {
+                        gameCode =
+                            GameManager.ReadHeader<GameManager.GbcGameHeader>().GameTitle.GetString();
+                    }
+                    else if (GameManager.IsSuperGameBoy())
+                    {
+                        gameCode =
+                            GameManager.ReadHeader<GameManager.SgbGameHeader>().GameTitle.GetString();
+                    }
+                    else
+                    {
+                        gameCode =
+                            GameManager.ReadHeader<GameManager.GbGameHeader>().GameTitle.GetString();
+                    }
+
+                    // since older games don't have a game code
+                    // just read the last 4 letters
+                    int length = gameCode.Length;
+
+                    for (int i = length - 1; i >= 0; i--)
+                    {
+                        if (gameCode[i] != Char.MinValue)
+                            break;
+
+                        length--;
+                    }
+
+                    if (length >= 4)
+                        gameCode = gameCode.Substring(length - 4, 4);
                 }
+            }
+            catch (Exception ex)
+            {
+                GameManager.FileName = String.Empty;
+                lblGame.Text = "ROM: ???";
 
-                // since older games don't have a game code
-                // just read the last 4 letters
-                int length = gameCode.Length;
+                ExceptionHandler.LogException(ex);
+                Clear();
+                Disable();
 
-                for (int i = length - 1; i >= 0; i--)
-                {
-                    if (gameCode[i] != Char.MinValue)
-                        break;
-
-                    length--;
-                }
-
-                if (length >= 4)
-                    gameCode = gameCode.Substring(length - 4, 4);
+                ExceptionHandler.ShowMessage(ex);
+                return;
             }
 
             lblGame.Text = "ROM: " + gameCode;
